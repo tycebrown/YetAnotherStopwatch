@@ -3,7 +3,7 @@ import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import {ref} from 'vue';
 
-const msg = ref(undefined);
+const msg = ref<string | undefined>(undefined);
 
 function loadMsg(){
   return fetch('http://localhost:5000/api/msg').then(async (data) => msg.value = await data.text());
